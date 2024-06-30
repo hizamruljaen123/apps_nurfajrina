@@ -1,0 +1,55 @@
+if Jenis Ikan_Tuna <= 0.50:
+  -> if Jenis Ikan_Teri <= 0.50:
+    -> if Terjual Harian (Kg) <= 50.00:
+      -> if Stok Harian (Kg) <= 183.00:
+        -> return Laris
+      -> else:
+        -> return Tidak Laris
+    -> else:
+      -> if Terjual Harian (Kg) <= 55.50:
+        -> return Tidak Laris
+      -> else:
+        -> if Bulan_April <= 0.50:
+          -> if Terjual Harian (Kg) <= 134.00:
+            -> if Terjual Harian (Kg) <= 65.50:
+              -> return Laris
+            -> else:
+              -> if Stok Harian (Kg) <= 61.50:
+                -> return Tidak Laris
+              -> else:
+                -> if Lokasi Penjualan_Aceh Utara <= 0.50:
+                  -> if Kategori Pemasaran_Suplai ke FNB atau pelaku bisnis lain <= 0.50:
+                    -> if Jenis Ikan_Udang <= 0.50:
+                      -> if Bulan_Desember <= 0.50:
+                        -> return Laris
+                      -> else:
+                        -> return Tidak Laris
+                    -> else:
+                      -> return Tidak Laris
+                  -> else:
+                    -> return Tidak Laris
+                -> else:
+                  -> if Jenis Ikan_Udang <= 0.50:
+                    -> return Laris
+                  -> else:
+                    -> if Bulan_Juli <= 0.50:
+                      -> return Tidak Laris
+                    -> else:
+                      -> return Laris
+          -> else:
+            -> if Jenis Ikan_Tongkol <= 0.50:
+              -> return Laris
+            -> else:
+              -> return Tidak Laris
+        -> else:
+          -> return Laris
+  -> else:
+    -> if Bulan_Maret <= 0.50:
+      -> return Tidak Laris
+    -> else:
+      -> return Laris
+else:
+  -> if Terjual Harian (Kg) <= 23.50:
+    -> return Laris
+  -> else:
+    -> return Tidak Laris

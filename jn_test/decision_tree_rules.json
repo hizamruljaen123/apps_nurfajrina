@@ -1,0 +1,129 @@
+{
+    "feature": "Jenis Ikan_Tuna",
+    "threshold": 0.5,
+    "left": {
+        "feature": "Jenis Ikan_Teri",
+        "threshold": 0.5,
+        "left": {
+            "feature": "Terjual Harian (Kg)",
+            "threshold": 50.0,
+            "left": {
+                "feature": "Stok Harian (Kg)",
+                "threshold": 183.0,
+                "left": {
+                    "class": "Laris"
+                },
+                "right": {
+                    "class": "Tidak Laris"
+                }
+            },
+            "right": {
+                "feature": "Terjual Harian (Kg)",
+                "threshold": 55.5,
+                "left": {
+                    "class": "Tidak Laris"
+                },
+                "right": {
+                    "feature": "Bulan_April",
+                    "threshold": 0.5,
+                    "left": {
+                        "feature": "Terjual Harian (Kg)",
+                        "threshold": 134.0,
+                        "left": {
+                            "feature": "Terjual Harian (Kg)",
+                            "threshold": 65.5,
+                            "left": {
+                                "class": "Laris"
+                            },
+                            "right": {
+                                "feature": "Stok Harian (Kg)",
+                                "threshold": 61.5,
+                                "left": {
+                                    "class": "Tidak Laris"
+                                },
+                                "right": {
+                                    "feature": "Lokasi Penjualan_Aceh Utara",
+                                    "threshold": 0.5,
+                                    "left": {
+                                        "feature": "Kategori Pemasaran_Suplai ke FNB atau pelaku bisnis lain",
+                                        "threshold": 0.5,
+                                        "left": {
+                                            "feature": "Jenis Ikan_Udang",
+                                            "threshold": 0.5,
+                                            "left": {
+                                                "feature": "Bulan_Desember",
+                                                "threshold": 0.5,
+                                                "left": {
+                                                    "class": "Laris"
+                                                },
+                                                "right": {
+                                                    "class": "Tidak Laris"
+                                                }
+                                            },
+                                            "right": {
+                                                "class": "Tidak Laris"
+                                            }
+                                        },
+                                        "right": {
+                                            "class": "Tidak Laris"
+                                        }
+                                    },
+                                    "right": {
+                                        "feature": "Jenis Ikan_Udang",
+                                        "threshold": 0.5,
+                                        "left": {
+                                            "class": "Laris"
+                                        },
+                                        "right": {
+                                            "feature": "Bulan_Juli",
+                                            "threshold": 0.5,
+                                            "left": {
+                                                "class": "Tidak Laris"
+                                            },
+                                            "right": {
+                                                "class": "Laris"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "right": {
+                            "feature": "Jenis Ikan_Tongkol",
+                            "threshold": 0.5,
+                            "left": {
+                                "class": "Laris"
+                            },
+                            "right": {
+                                "class": "Tidak Laris"
+                            }
+                        }
+                    },
+                    "right": {
+                        "class": "Laris"
+                    }
+                }
+            }
+        },
+        "right": {
+            "feature": "Bulan_Maret",
+            "threshold": 0.5,
+            "left": {
+                "class": "Tidak Laris"
+            },
+            "right": {
+                "class": "Laris"
+            }
+        }
+    },
+    "right": {
+        "feature": "Terjual Harian (Kg)",
+        "threshold": 23.5,
+        "left": {
+            "class": "Laris"
+        },
+        "right": {
+            "class": "Tidak Laris"
+        }
+    }
+}

@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+
+  <style>
+    /* Custom CSS */
+    body {
+      background-color: #f8f9fa;
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 250px;
+      padding: 20px;
+      background-color: #343a40;
+      color: #fff;
+    }
+    .sidebar-heading {
+      color: #fed136;
+      margin-bottom: 20px;
+    }
+    .nav-link {
+      color: #fff;
+    }
+    .nav-link:hover {
+      color: #fed136;
+    }
+    .content {
+      margin-left: 250px;
+      padding: 20px;
+    }
+  </style>
+  <title>Hello, world!</title>
+</head>
+<body>
+  <!-- Sidebar -->
+  {% include 'side.html' %}
+
+  <!-- Content -->
+  <!-- Content -->
+  <div class="content">
+    <div class="container-fluid">
+      <h2>Dashboard</h2>
+      <hr>
+      <div class="row">
+        <!-- Tabel -->
+        <div class="col-md-6">
+          <h3>Hasil Klasifikasi</h3>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Nama</th>
+                <th>Nilai</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Item 1</td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Item 2</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Item 3</td>
+                <td>30</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Chart Pie -->
+        <div class="col-md-6">
+          <h3>Persentase Data</h3>
+          <div id="chart-container" style="min-width: 300px; height: 300px;"></div>
+        </div>
+      </div>
+      <div class="row">
+        <h1>Data Hasil</h1>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Jenis Ikan</th>
+              <th>Tahun</th>
+              <th>Bulan</th>
+              <th>Berat (Ton)</th>
+              <th>Lokasi Penjualan</th>
+              <th>Stok Harian (Kg)</th>
+              <th>Terjual Harian (Kg)</th>
+              <th>Kategori Pemasaran</th>
+              <th>Status Penjualan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Isi tabel disini -->
+            <tr>
+              <td>Gurame</td>
+              <td>2024</td>
+              <td>Mei</td>
+              <td>5</td>
+              <td>Jakarta</td>
+              <td>1000</td>
+              <td>800</td>
+              <td>Pasar Tradisional</td>
+              <td>Laku</td>
+            </tr>
+            <!-- Tambahkan baris tambahan sesuai kebutuhan -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+  </div>
+
+<!-- JavaScript untuk Highcharts -->
+<script>
+  Highcharts.chart('chart-container', {
+    chart: {
+      type: 'pie',
+      backgroundColor: 'transparent' // Set background transparan
+    },
+    title: {
+      text: 'Persentase Data'
+    },
+    series: [{
+      name: 'Persentase',
+      colorByPoint: true,
+      data: [{
+        name: 'Item 1',
+        y: 35
+      }, {
+        name: 'Item 2',
+        y: 25
+      }, {
+        name: 'Item 3',
+        y: 40
+      }]
+    }]
+  });
+</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+
+  <style>
+    /* Custom CSS */
+    body {
+      background-color: #f8f9fa;
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 250px;
+      padding: 20px;
+      background-color: #343a40;
+      color: #fff;
+    }
+    .sidebar-heading {
+      color: #fed136;
+      margin-bottom: 20px;
+    }
+    .nav-link {
+      color: #fff;
+    }
+    .nav-link:hover {
+      color: #fed136;
+    }
+    .content {
+      margin-left: 250px;
+      padding: 20px;
+    }
+  </style>
+  <title>Hello, world!</title>
+</head>
+<body>
+  <!-- Sidebar -->
+  {% include 'side.html' %}
+
+  <!-- Content -->
+  <!-- Content -->
+  <div class="content">
+    <div class="container-fluid">
+            
+        
+      <div class="row">
+        <h1>Data Uji</h1>
+        <table class="table">
+        <thead>
+            <tr>
+                <th>Jenis Ikan</th>
+                <th>Tahun</th>
+                <th>Bulan</th>
+                <th>Berat (Ton)</th>
+                <th>Lokasi Penjualan</th>
+                <th>Stok Harian (Kg)</th>
+                <th>Terjual Harian (Kg)</th>
+                <th>Kategori Pemasaran</th>
+            </tr>
+        </thead>
+        <tbody id="data-body">
+            <tr>
+                <td>Gurame</td>
+                <td>2024</td>
+                <td>Mei</td>
+                <td>5</td>
+                <td>Jakarta</td>
+                <td>1000</td>
+                <td>800</td>
+                <td>Pasar Tradisional</td>
+            </tr>
+            <!-- Baris tambahan akan diisi di sini -->
+        </tbody>
+    </table>
+
+    <script>
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function getRandomFloat(min, max, decimals) {
+            const str = (Math.random() * (max - min) + min).toFixed(decimals);
+            return parseFloat(str);
+        }
+
+        function getRandomElement(array) {
+            return array[Math.floor(Math.random() * array.length)];
+        }
+
+        const jenisIkan = ['Tuna', 'Cakalang', 'Teri', 'Bawal', 'Kerapu', 'Bandeng', 'Udang', 'Tongkol', 'Kakap'];
+        const tahun = [2020, 2021, 2022, 2023];
+        const bulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+        const lokasiPenjualan = ['Lhokseumawe', 'Aceh Utara', 'Jakarta'];
+        const kategoriPemasaran = ['Penjualan langsung ke pedagang UMKM', 'Suplai ke FNB atau pelaku bisnis lain', 'Jual langsung ke masyarakat'];
+
+        const dataBody = document.getElementById('data-body');
+
+        for (let i = 0; i < 20; i++) {
+            const row = document.createElement('tr');
+
+            const jenisIkanCell = document.createElement('td');
+            jenisIkanCell.textContent = getRandomElement(jenisIkan);
+            row.appendChild(jenisIkanCell);
+
+            const tahunCell = document.createElement('td');
+            tahunCell.textContent = getRandomElement(tahun);
+            row.appendChild(tahunCell);
+
+            const bulanCell = document.createElement('td');
+            bulanCell.textContent = getRandomElement(bulan);
+            row.appendChild(bulanCell);
+
+            const beratCell = document.createElement('td');
+            beratCell.textContent = getRandomFloat(0.5, 3.0, 1);
+            row.appendChild(beratCell);
+
+            const lokasiPenjualanCell = document.createElement('td');
+            lokasiPenjualanCell.textContent = getRandomElement(lokasiPenjualan);
+            row.appendChild(lokasiPenjualanCell);
+
+            const stokHarianCell = document.createElement('td');
+            stokHarianCell.textContent = getRandomInt(50, 200);
+            row.appendChild(stokHarianCell);
+
+            const terjualHarianCell = document.createElement('td');
+            terjualHarianCell.textContent = getRandomInt(20, 150);
+            row.appendChild(terjualHarianCell);
+
+            const kategoriPemasaranCell = document.createElement('td');
+            kategoriPemasaranCell.textContent = getRandomElement(kategoriPemasaran);
+            row.appendChild(kategoriPemasaranCell);
+
+            
+            dataBody.appendChild(row);
+        }
+    </script>
+      </div>
+    </div>
+    
+  </div>
+
+<!-- JavaScript untuk Highcharts -->
+<script>
+  Highcharts.chart('chart-container', {
+    chart: {
+      type: 'pie',
+      backgroundColor: 'transparent' // Set background transparan
+    },
+    title: {
+      text: 'Persentase Data'
+    },
+    series: [{
+      name: 'Persentase',
+      colorByPoint: true,
+      data: [{
+        name: 'Item 1',
+        y: 35
+      }, {
+        name: 'Item 2',
+        y: 25
+      }, {
+        name: 'Item 3',
+        y: 40
+      }]
+    }]
+  });
+</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
