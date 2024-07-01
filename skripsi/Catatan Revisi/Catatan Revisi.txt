@@ -4,7 +4,7 @@ Senin - 01/juli/2024
 4.1 hasil  
 4.2 pembahasan 
 
-*perbaiki halaman terkhusus pada gambar dan table
+*perbaiki halaman terkhusus pada gambar dan table [Selesai]
 *buat nama pada table lanjutan dan gambar 
 * pada perhitungan jenis ikan , table 4.9 dan gambar 4.6 ubah ke portrait
 * analisi basis model dfd pindahkan ke lampiran (permintaan pak asrianda)
