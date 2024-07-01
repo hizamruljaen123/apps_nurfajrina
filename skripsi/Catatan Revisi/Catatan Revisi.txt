@@ -1,3 +1,15 @@
-Senin - 21/01/2024
+Senin - 01/juli/2024
 
-* Perbaikan Halaman Web
+* perbaiki Bab IV Hasil dan pembahasan
+4.1 hasil  
+4.2 pembahasan 
+
+*perbaiki halaman terkhusus pada gambar dan table
+*buat nama pada table lanjutan dan gambar 
+* pada perhitungan jenis ikan , table 4.9 dan gambar 4.6 ubah ke portrait
+* analisi basis model dfd pindahkan ke lampiran (permintaan pak asrianda)
+* bab v ubah isi kesimpulan nya 
+* daftar isi 
+* tambahkan jurnal dosen it menggunakan c4.5 pada daftar Pustaka
+* buat jurnal dalam 2 hari 
+
