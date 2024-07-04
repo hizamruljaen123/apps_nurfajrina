@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/zooming/build/zooming.min.css">
+  <style>
+    
+    .content {
+      margin-top: 20px;
+    }
+    .modal-dialog {
+      max-width: 80%;
+      margin: 1.75rem auto;
+    }
+    .modal-body {
+      position: relative;
+      padding: 0;
+    }
+    .modal-body img {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+  <title>Decision Tree Visualization</title>
+</head>
+<body>
+  <!-- Sidebar -->
+  {% include 'side.html' %}
+
+  <!-- Content -->
+  <div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Decision Tree Visualization</h1>
+          <div class="form-group">
+            <img src="/image/decision_tree_visualization.png" id="treeImage" class="img-fluid" data-action="zoom" alt="Decision Tree Visualization">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="imageModalLabel">Decision Tree Visualization</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img src="/image/decision_tree_visualization.png" id="modalImage" alt="Decision Tree Visualization">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/zooming/build/zooming.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize Zooming.js
+      new Zooming().listen('#treeImage');
+
+      // Show modal with zoom and pan feature
+      $('#treeImage').on('click', function() {
+        $('#imageModal').modal('show');
+      });
+
+      // Apply zooming to the image in the modal
+      $('#imageModal').on('shown.bs.modal', function () {
+        new Zooming().listen('#modalImage');
+      });
+    });
+  </script>
+</body>
+</html>

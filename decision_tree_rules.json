@@ -1,0 +1,129 @@
+{
+    "feature": "jenis_ikan_Tuna",
+    "threshold": 0.5,
+    "left": {
+        "feature": "jenis_ikan_Teri",
+        "threshold": 0.5,
+        "left": {
+            "feature": "terjual_harian",
+            "threshold": 50.0,
+            "left": {
+                "feature": "stok",
+                "threshold": 183.0,
+                "left": {
+                    "class": "Laris"
+                },
+                "right": {
+                    "class": "Tidak Laris"
+                }
+            },
+            "right": {
+                "feature": "terjual_harian",
+                "threshold": 55.5,
+                "left": {
+                    "class": "Tidak Laris"
+                },
+                "right": {
+                    "feature": "bulan_April",
+                    "threshold": 0.5,
+                    "left": {
+                        "feature": "terjual_harian",
+                        "threshold": 134.0,
+                        "left": {
+                            "feature": "terjual_harian",
+                            "threshold": 65.5,
+                            "left": {
+                                "class": "Laris"
+                            },
+                            "right": {
+                                "feature": "stok",
+                                "threshold": 61.5,
+                                "left": {
+                                    "class": "Tidak Laris"
+                                },
+                                "right": {
+                                    "feature": "lokasi_Aceh Utara",
+                                    "threshold": 0.5,
+                                    "left": {
+                                        "feature": "kategori_pemasaran_Suplai ke FNB atau pelaku bisnis lain",
+                                        "threshold": 0.5,
+                                        "left": {
+                                            "feature": "jenis_ikan_Udang",
+                                            "threshold": 0.5,
+                                            "left": {
+                                                "feature": "bulan_Desember",
+                                                "threshold": 0.5,
+                                                "left": {
+                                                    "class": "Laris"
+                                                },
+                                                "right": {
+                                                    "class": "Tidak Laris"
+                                                }
+                                            },
+                                            "right": {
+                                                "class": "Tidak Laris"
+                                            }
+                                        },
+                                        "right": {
+                                            "class": "Tidak Laris"
+                                        }
+                                    },
+                                    "right": {
+                                        "feature": "jenis_ikan_Udang",
+                                        "threshold": 0.5,
+                                        "left": {
+                                            "class": "Laris"
+                                        },
+                                        "right": {
+                                            "feature": "bulan_Juli",
+                                            "threshold": 0.5,
+                                            "left": {
+                                                "class": "Tidak Laris"
+                                            },
+                                            "right": {
+                                                "class": "Laris"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "right": {
+                            "feature": "jenis_ikan_Tongkol",
+                            "threshold": 0.5,
+                            "left": {
+                                "class": "Laris"
+                            },
+                            "right": {
+                                "class": "Tidak Laris"
+                            }
+                        }
+                    },
+                    "right": {
+                        "class": "Laris"
+                    }
+                }
+            }
+        },
+        "right": {
+            "feature": "bulan_Maret",
+            "threshold": 0.5,
+            "left": {
+                "class": "Tidak Laris"
+            },
+            "right": {
+                "class": "Laris"
+            }
+        }
+    },
+    "right": {
+        "feature": "terjual_harian",
+        "threshold": 23.5,
+        "left": {
+            "class": "Laris"
+        },
+        "right": {
+            "class": "Tidak Laris"
+        }
+    }
+}

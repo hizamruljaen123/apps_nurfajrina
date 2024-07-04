@@ -1,0 +1,44 @@
+1. /train_model
+   Method: GET
+   Description: Memuat data dari file Excel, membagi data menjadi data latih dan uji, melatih model Decision Tree, dan menyimpan modelnya. Data latih dan uji juga disimpan dalam direktori `public/data/`.
+   Response: JSON yang menyatakan bahwa model telah dilatih dengan sukses dan data telah disimpan.
+
+2. /visualize_tree
+   Method: GET
+   Description: Memvisualisasikan pohon keputusan dan menyimpannya sebagai gambar.
+   Response: JSON yang menyatakan bahwa visualisasi pohon keputusan telah disimpan.
+
+3. /extract_rules
+   Method: GET
+   Description: Mengekstrak aturan dari pohon keputusan dan menyimpannya dalam format JSON dan TXT.
+   Response: JSON yang menyatakan bahwa aturan telah diekstrak dan disimpan dalam format JSON dan TXT.
+
+4. /classify_test_data
+   Method: GET
+   Description: Mengklasifikasikan data uji menggunakan aturan dari pohon keputusan dan menyimpan hasilnya dalam direktori `public/data/`.
+   Response: JSON berisi ID dan Predicted Status Penjualan dari data uji.
+
+5. /visualize_data
+   Method: GET
+   Description: Membuat visualisasi dari data dan hasil prediksi, kemudian menyimpannya sebagai gambar.
+   Response: JSON yang menyatakan bahwa visualisasi telah disimpan.
+
+6. /dashboard
+   Method: GET
+   Description: Menampilkan halaman dashboard.
+   Response: HTML halaman dashboard.
+
+7. /data_latih
+   Method: GET
+   Description: Menampilkan halaman data latih.
+   Response: HTML halaman data latih.
+
+8. /data_uji
+   Method: GET
+   Description: Menampilkan halaman data uji.
+   Response: HTML halaman data uji.
+
+9. /hasil
+   Method: GET
+   Description: Menampilkan halaman hasil prediksi.
+   Response: HTML halaman hasil prediksi.

@@ -1,0 +1,55 @@
+JIKA jenis_ikan_Tuna IS TRUE MAKA:
+  DAN JIKA jenis_ikan_Teri IS TRUE MAKA:
+    DAN JIKA terjual_harian <= 50.0 MAKA:
+      DAN JIKA stok <= 183.0 MAKA:
+        KELAS = Laris
+      DAN JIKA TIDAK MAKA:
+        KELAS = Tidak Laris
+    DAN JIKA TIDAK MAKA:
+      DAN JIKA terjual_harian <= 55.5 MAKA:
+        KELAS = Tidak Laris
+      DAN JIKA TIDAK MAKA:
+        DAN JIKA bulan_April <= 0.5 MAKA:
+          DAN JIKA terjual_harian <= 134.0 MAKA:
+            DAN JIKA terjual_harian <= 65.5 MAKA:
+              KELAS = Laris
+            DAN JIKA TIDAK MAKA:
+              DAN JIKA stok <= 61.5 MAKA:
+                KELAS = Tidak Laris
+              DAN JIKA TIDAK MAKA:
+                DAN JIKA lokasi_Aceh Utara <= 0.5 MAKA:
+                  DAN JIKA kategori_pemasaran_Suplai ke FNB atau pelaku bisnis lain <= 0.5 MAKA:
+                    DAN JIKA jenis_ikan_Udang IS TRUE MAKA:
+                      DAN JIKA bulan_Desember <= 0.5 MAKA:
+                        KELAS = Laris
+                      DAN JIKA TIDAK MAKA:
+                        KELAS = Tidak Laris
+                    DAN JIKA TIDAK MAKA:
+                      KELAS = Tidak Laris
+                  DAN JIKA TIDAK MAKA:
+                    KELAS = Tidak Laris
+                DAN JIKA TIDAK MAKA:
+                  DAN JIKA jenis_ikan_Udang IS TRUE MAKA:
+                    KELAS = Laris
+                  DAN JIKA TIDAK MAKA:
+                    DAN JIKA bulan_Juli <= 0.5 MAKA:
+                      KELAS = Tidak Laris
+                    DAN JIKA TIDAK MAKA:
+                      KELAS = Laris
+          DAN JIKA TIDAK MAKA:
+            DAN JIKA jenis_ikan_Tongkol IS TRUE MAKA:
+              KELAS = Laris
+            DAN JIKA TIDAK MAKA:
+              KELAS = Tidak Laris
+        DAN JIKA TIDAK MAKA:
+          KELAS = Laris
+  DAN JIKA TIDAK MAKA:
+    DAN JIKA bulan_Maret <= 0.5 MAKA:
+      KELAS = Tidak Laris
+    DAN JIKA TIDAK MAKA:
+      KELAS = Laris
+JIKA TIDAK MAKA:
+  DAN JIKA terjual_harian <= 23.5 MAKA:
+    KELAS = Laris
+  DAN JIKA TIDAK MAKA:
+    KELAS = Tidak Laris

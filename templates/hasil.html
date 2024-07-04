@@ -3,166 +3,235 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
   <style>
-    /* Custom CSS */
-    body {
-      background-color: #f8f9fa;
+    .table {
+      font-size: 0.70rem; /* Mengubah ukuran font tabel menjadi lebih kecil */
+      background-color: #fff;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      width: 250px;
-      padding: 20px;
-      background-color: #343a40;
+    .table th, .table td {
+      padding: 12px 15px;
+      text-align: left;
+    }
+    .table thead th {
+      background-color: #007bff;
       color: #fff;
+      font-weight: bold;
+      text-transform: uppercase;
     }
-    .sidebar-heading {
-      color: #fed136;
-      margin-bottom: 20px;
+    .table tbody tr:nth-child(even) {
+      background-color: #f2f2f2;
     }
-    .nav-link {
-      color: #fff;
-    }
-    .nav-link:hover {
-      color: #fed136;
-    }
-    .content {
-      margin-left: 250px;
-      padding: 20px;
+    .table tbody tr:hover {
+      background-color: #e9ecef;
     }
   </style>
-  <title>Hello, world!</title>
+
+  <title>Data Hasil Klasifikasi</title>
 </head>
 <body>
   <!-- Sidebar -->
   {% include 'side.html' %}
 
   <!-- Content -->
-<!-- Content -->
-<div class="content">
-    <h2>Hasil Klasifikasi</h2>
-    <hr>
-    <div class="row">
-        <!-- Grafik 1 -->
-        <div class="col-md-4">
-            <h3>Klasifikasi Jenis</h3>
-            <div id="grafik1" style="min-width: 300px; height: 300px;"></div>
-        </div>
-        <!-- Grafik 2 -->
-        <div class="col-md-4">
-            <h3>Kelasifikasi Hasil</h3>
-            <div id="grafik2" style="min-width: 300px; height: 300px;"></div>
-        </div>
-        <!-- Grafik 3 -->
-        <div class="col-md-4">
-            <h3>Klasifikasi Wilayah</h3>
-            <div id="grafik3" style="min-width: 300px; height: 300px;"></div>
-        </div>
-        <!-- Tabel 1 -->
+  <div class="content">
+    <div class="container-fluid">
+        <h1>Data Hasil Klasifikasi</h1>
+      <div class="row">
+        
         <div class="col-md-6">
-            <h3>Tabel Hasil Klasifikasi</h3>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Header 1</th>
-                        <th>Header 2</th>
-                        <th>Header 3</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Data 1</td>
-                        <td>Data 2</td>
-                        <td>Data 3</td>
-                    </tr>
-                    <!-- Tambahkan baris tambahan sesuai kebutuhan -->
-                </tbody>
-            </table>
+          <!-- Chart untuk Persentase Jenis Ikan yang Laris dan Tidak Laris -->
+          <div id="jenis-ikan-chart" style="width:100%; height:400px;"></div>
         </div>
-        <!-- Tabel 2 -->
         <div class="col-md-6">
-            <h3>Hasil Klasifikasi Wilayah</h3>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Header 1</th>
-                        <th>Header 2</th>
-                        <th>Header 3</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Data 1</td>
-                        <td>Data 2</td>
-                        <td>Data 3</td>
-                    </tr>
-                    <!-- Tambahkan baris tambahan sesuai kebutuhan -->
-                </tbody>
-            </table>
+          <!-- Chart untuk Jumlah Penjualan Selama Beberapa Bulan Terakhir -->
+          <div id="penjualan-bulanan-chart" style="width:100%; height:400px;"></div>
         </div>
+        <div class="col-md-6">
+          <!-- Chart untuk Jumlah Laris dan Tidak Laris Berdasarkan Daerah -->
+          <div id="laris-daerah-chart" style="width:100%; height:400px;"></div>
+        </div>
+        <div class="col-md-6">
+          <!-- Chart untuk Persentase Penjualan Laris dan Tidak Laris Berdasarkan Kategori Pemasaran -->
+          <div id="kategori-penjualan-chart" style="width:100%; height:400px;"></div>
+        </div>
+      </div>
+      <div class="row">
+        <h2>Data Detail</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Jenis Ikan</th>
+              <th>Tahun</th>
+              <th>Bulan</th>
+              <th>Berat (Ton)</th>
+              <th>Lokasi Penjualan</th>
+              <th>Stok Harian (Kg)</th>
+              <th>Terjual Harian (Kg)</th>
+              <th>Kategori Pemasaran</th>
+              <th>Status Penjualan</th>
+            </tr>
+          </thead>
+          <tbody id="data-body">
+            <!-- Baris tambahan akan diisi di sini -->
+          </tbody>
+        </table>
+      </div>
     </div>
-</div>
-<script>
-    // Grafik 1
-    Highcharts.chart('grafik1', {
-        chart: {
-            type: 'bar'
-        },
-        title: {
-            text: 'Hasil Berdasarkan Jenis'
-        },
-        series: [{
-            name: 'Data',
-            data: [1, 2, 3, 4, 5]
-        }]
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      fetch('/view_predicted_data')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(data => {
+          const dataBody = document.getElementById('data-body');
+          dataBody.innerHTML = '';  // Clear existing rows
+
+          let statusCount = { 'Laris': 0, 'Tidak Laris': 0 };
+          let jenisCount = {};
+          let bulananCount = {};
+          let daerahCount = {};
+          let kategoriCount = {};
+
+          data.forEach(item => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+              <td>${item.jenis_ikan}</td>
+              <td>${item.tahun}</td>
+              <td>${item.bulan}</td>
+              <td>${item.berat}</td>
+              <td>${item.lokasi}</td>
+              <td>${item.stok}</td>
+              <td>${item.terjual_harian}</td>
+              <td>${item.kategori_pemasaran}</td>
+              <td>${item['Predicted Status Penjualan']}</td>
+            `;
+            dataBody.appendChild(row);
+
+            // Count status penjualan
+            if (item['Predicted Status Penjualan'] in statusCount) {
+              statusCount[item['Predicted Status Penjualan']]++;
+            } else {
+              statusCount[item['Predicted Status Penjualan']] = 1;
+            }
+
+            // Count jenis ikan
+            if (!jenisCount[item.jenis_ikan]) jenisCount[item.jenis_ikan] = { 'Laris': 0, 'Tidak Laris': 0 };
+            jenisCount[item.jenis_ikan][item['Predicted Status Penjualan']]++;
+
+            // Count penjualan bulanan
+            let bulanTahun = `${item.bulan} ${item.tahun}`;
+            if (!bulananCount[bulanTahun]) bulananCount[bulanTahun] = { 'Laris': 0, 'Tidak Laris': 0 };
+            bulananCount[bulanTahun][item['Predicted Status Penjualan']]++;
+
+            // Count daerah penjualan
+            if (!daerahCount[item.lokasi]) daerahCount[item.lokasi] = { 'Laris': 0, 'Tidak Laris': 0 };
+            daerahCount[item.lokasi][item['Predicted Status Penjualan']]++;
+
+            // Count kategori pemasaran
+            if (!kategoriCount[item.kategori_pemasaran]) kategoriCount[item.kategori_pemasaran] = { 'Laris': 0, 'Tidak Laris': 0 };
+            kategoriCount[item.kategori_pemasaran][item['Predicted Status Penjualan']]++;
+          });
+
+          // Function to create pie chart with ECharts
+          function createPieChart(container, title, data) {
+            let chart = echarts.init(document.getElementById(container));
+            let option = {
+              title: {
+                text: title,
+                left: 'center'
+              },
+              tooltip: {
+                trigger: 'item'
+              },
+              series: [
+                {
+                  name: 'Jumlah',
+                  type: 'pie',
+                  radius: '50%',
+                  data: Object.keys(data).map(key => ({
+                    name: key,
+                    value: data[key]
+                  })),
+                  emphasis: {
+                    itemStyle: {
+                      shadowBlur: 10,
+                      shadowOffsetX: 0,
+                      shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                  }
+                }
+              ]
+            };
+            chart.setOption(option);
+          }
+
+          // Function to create column chart with ECharts
+          function createColumnChart(container, title, categories, series) {
+            let chart = echarts.init(document.getElementById(container));
+            let option = {
+              title: {
+                text: title,
+                left: 'center'
+              },
+              tooltip: {
+                trigger: 'axis'
+              },
+              xAxis: {
+                type: 'category',
+                data: categories
+              },
+              yAxis: {
+                type: 'value'
+              },
+              series: series.map(serie => ({
+                name: serie.name,
+                type: 'bar',
+                data: serie.data
+              }))
+            };
+            chart.setOption(option);
+          }
+
+          // Ensure the containers are fully loaded
+          setTimeout(function() {
+            // Create charts
+            createPieChart('jenis-ikan-chart', 'Distribusi Status Penjualan', statusCount);
+            createColumnChart('penjualan-bulanan-chart', 'Jumlah Penjualan Perbulan', 
+              Object.keys(bulananCount), [
+                { name: 'Laris', data: Object.values(bulananCount).map(item => item.Laris) },
+                { name: 'Tidak Laris', data: Object.values(bulananCount).map(item => item['Tidak Laris']) }
+              ]
+            );
+
+            createColumnChart('laris-daerah-chart', 'Berdasarkan Daerah', 
+              Object.keys(daerahCount), [
+                { name: 'Laris', data: Object.values(daerahCount).map(item => item.Laris) },
+                { name: 'Tidak Laris', data: Object.values(daerahCount).map(item => item['Tidak Laris']) }
+              ]
+            );
+
+            createColumnChart('kategori-penjualan-chart', 'Berdasarkan Kategori Pemasaran', 
+              Object.keys(kategoriCount), [
+                { name: 'Laris', data: Object.values(kategoriCount).map(item => item.Laris) },
+                { name: 'Tidak Laris', data: Object.values(kategoriCount).map(item => item['Tidak Laris']) }
+              ]
+            );
+          }, 0);  // You can adjust the timeout delay if necessary
+        })
+        .catch(error => console.error('Error fetching data:', error));
     });
-
-    // Grafik 2
-    Highcharts.chart('grafik2', {
-        chart: {
-            type: 'line'
-        },
-        title: {
-            text: 'Hasil Berdasarkan Klasifikasi'
-        },
-        series: [{
-            name: 'Data',
-            data: [5, 4, 3, 2, 1]
-        }]
-    });
-
-    // Grafik 3
-    Highcharts.chart('grafik3', {
-        chart: {
-            type: 'pie'
-        },
-        title: {
-            text: 'Hasil Berdasarkan Wilayah'
-        },
-        series: [{
-            name: 'Persentase',
-            colorByPoint: true,
-            data: [{
-                name: 'Item 1',
-                y: 35
-            }, {
-                name: 'Item 2',
-                y: 25
-            }, {
-                name: 'Item 3',
-                y: 40
-            }]
-        }]
-    });
-</script>  
-
-<!-- JavaScript untuk Highcharts -->
-
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  </script>
 </body>
 </html>
