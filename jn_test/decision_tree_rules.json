@@ -1,87 +1,87 @@
 {
-    "feature": "Jenis Ikan_Tuna",
+    "feature": "jenis_ikan_Tuna",
     "threshold": 0.5,
     "left": {
-        "feature": "Jenis Ikan_Teri",
+        "feature": "jenis_ikan_Teri",
         "threshold": 0.5,
         "left": {
-            "feature": "Terjual Harian (Kg)",
+            "feature": "terjual_harian",
             "threshold": 50.0,
             "left": {
-                "feature": "Stok Harian (Kg)",
+                "feature": "stok",
                 "threshold": 183.0,
+                "left": {
+                    "class": "Tidak Laris"
+                },
+                "right": {
+                    "class": "Laris"
+                }
+            },
+            "right": {
+                "feature": "terjual_harian",
+                "threshold": 55.5,
                 "left": {
                     "class": "Laris"
                 },
                 "right": {
-                    "class": "Tidak Laris"
-                }
-            },
-            "right": {
-                "feature": "Terjual Harian (Kg)",
-                "threshold": 55.5,
-                "left": {
-                    "class": "Tidak Laris"
-                },
-                "right": {
-                    "feature": "Bulan_April",
+                    "feature": "bulan_April",
                     "threshold": 0.5,
                     "left": {
-                        "feature": "Terjual Harian (Kg)",
+                        "feature": "terjual_harian",
                         "threshold": 134.0,
                         "left": {
-                            "feature": "Terjual Harian (Kg)",
+                            "feature": "terjual_harian",
                             "threshold": 65.5,
                             "left": {
-                                "class": "Laris"
+                                "class": "Tidak Laris"
                             },
                             "right": {
-                                "feature": "Stok Harian (Kg)",
+                                "feature": "stok",
                                 "threshold": 61.5,
                                 "left": {
-                                    "class": "Tidak Laris"
+                                    "class": "Laris"
                                 },
                                 "right": {
-                                    "feature": "Lokasi Penjualan_Aceh Utara",
+                                    "feature": "lokasi_Aceh Utara",
                                     "threshold": 0.5,
                                     "left": {
-                                        "feature": "Kategori Pemasaran_Suplai ke FNB atau pelaku bisnis lain",
+                                        "feature": "kategori_pemasaran_Suplai ke FNB atau pelaku bisnis lain",
                                         "threshold": 0.5,
                                         "left": {
-                                            "feature": "Jenis Ikan_Udang",
+                                            "feature": "jenis_ikan_Udang",
                                             "threshold": 0.5,
                                             "left": {
-                                                "feature": "Bulan_Desember",
+                                                "feature": "bulan_Desember",
                                                 "threshold": 0.5,
                                                 "left": {
-                                                    "class": "Laris"
+                                                    "class": "Tidak Laris"
                                                 },
                                                 "right": {
-                                                    "class": "Tidak Laris"
+                                                    "class": "Laris"
                                                 }
                                             },
                                             "right": {
-                                                "class": "Tidak Laris"
+                                                "class": "Laris"
                                             }
                                         },
                                         "right": {
-                                            "class": "Tidak Laris"
+                                            "class": "Laris"
                                         }
                                     },
                                     "right": {
-                                        "feature": "Jenis Ikan_Udang",
+                                        "feature": "jenis_ikan_Udang",
                                         "threshold": 0.5,
                                         "left": {
-                                            "class": "Laris"
+                                            "class": "Tidak Laris"
                                         },
                                         "right": {
-                                            "feature": "Bulan_Juli",
+                                            "feature": "bulan_Juli",
                                             "threshold": 0.5,
                                             "left": {
-                                                "class": "Tidak Laris"
+                                                "class": "Laris"
                                             },
                                             "right": {
-                                                "class": "Laris"
+                                                "class": "Tidak Laris"
                                             }
                                         }
                                     }
@@ -89,41 +89,41 @@
                             }
                         },
                         "right": {
-                            "feature": "Jenis Ikan_Tongkol",
+                            "feature": "jenis_ikan_Tongkol",
                             "threshold": 0.5,
                             "left": {
-                                "class": "Laris"
+                                "class": "Tidak Laris"
                             },
                             "right": {
-                                "class": "Tidak Laris"
+                                "class": "Laris"
                             }
                         }
                     },
                     "right": {
-                        "class": "Laris"
+                        "class": "Tidak Laris"
                     }
                 }
             }
         },
         "right": {
-            "feature": "Bulan_Maret",
+            "feature": "bulan_Maret",
             "threshold": 0.5,
             "left": {
-                "class": "Tidak Laris"
+                "class": "Laris"
             },
             "right": {
-                "class": "Laris"
+                "class": "Tidak Laris"
             }
         }
     },
     "right": {
-        "feature": "Terjual Harian (Kg)",
+        "feature": "terjual_harian",
         "threshold": 23.5,
         "left": {
-            "class": "Laris"
+            "class": "Tidak Laris"
         },
         "right": {
-            "class": "Tidak Laris"
+            "class": "Laris"
         }
     }
 }

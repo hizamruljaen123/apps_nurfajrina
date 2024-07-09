@@ -1,0 +1,230 @@
+[
+    {
+        "conditions": [
+            "jenis_ikan_Tuna == True",
+            "jenis_ikan_Teri == True",
+            "terjual_harian <= 49.00",
+            "stok <= 177.00"
+        ],
+        "result": "Laris"
+    },
+    {
+        "conditions": [
+            "jenis_ikan_Tuna == True",
+            "jenis_ikan_Teri == True",
+            "terjual_harian <= 49.00",
+            "stok > 177.00"
+        ],
+        "result": "Tidak Laris"
+    },
+    {
+        "conditions": [
+            "jenis_ikan_Tuna == True",
+            "jenis_ikan_Teri == True",
+            "terjual_harian > 49.00",
+            "terjual_harian <= 53.00"
+        ],
+        "result": "Tidak Laris"
+    },
+    {
+        "conditions": [
+            "jenis_ikan_Tuna == True",
+            "jenis_ikan_Teri == True",
+            "terjual_harian > 49.00",
+            "terjual_harian > 53.00",
+            "bulan_April == True",
+            "terjual_harian <= 132.00",
+            "terjual_harian <= 65.00"
+        ],
+        "result": "Laris"
+    },
+    {
+        "conditions": [
+            "jenis_ikan_Tuna == True",
+            "jenis_ikan_Teri == True",
+            "terjual_harian > 49.00",
+            "terjual_harian > 53.00",
+            "bulan_April == True",
+            "terjual_harian <= 132.00",
+            "terjual_harian > 65.00",
+            "stok <= 61.00"
+        ],
+        "result": "Tidak Laris"
+    },
+    {
+        "conditions": [
+            "jenis_ikan_Tuna == True",
+            "jenis_ikan_Teri == True",
+            "terjual_harian > 49.00",
+            "terjual_harian > 53.00",
+            "bulan_April == True",
+            "terjual_harian <= 132.00",
+            "terjual_harian > 65.00",
+            "stok > 61.00",
+            "lokasi_Aceh Utara == True",
+            "kategori_pemasaran_Suplai ke FNB atau pelaku bisnis lain == True",
+            "jenis_ikan_Udang == True",
+            "bulan_Desember == True"
+        ],
+        "result": "Laris"
+    },
+    {
+        "conditions": [
+            "jenis_ikan_Tuna == True",
+            "jenis_ikan_Teri == True",
+            "terjual_harian > 49.00",
+            "terjual_harian > 53.00",
+            "bulan_April == True",
+            "terjual_harian <= 132.00",
+            "terjual_harian > 65.00",
+            "stok > 61.00",
+            "lokasi_Aceh Utara == True",
+            "kategori_pemasaran_Suplai ke FNB atau pelaku bisnis lain == True",
+            "jenis_ikan_Udang == True",
+            "bulan_Desember == False"
+        ],
+        "result": "Tidak Laris"
+    },
+    {
+        "conditions": [
+            "jenis_ikan_Tuna == True",
+            "jenis_ikan_Teri == True",
+            "terjual_harian > 49.00",
+            "terjual_harian > 53.00",
+            "bulan_April == True",
+            "terjual_harian <= 132.00",
+            "terjual_harian > 65.00",
+            "stok > 61.00",
+            "lokasi_Aceh Utara == True",
+            "kategori_pemasaran_Suplai ke FNB atau pelaku bisnis lain == True",
+            "jenis_ikan_Udang == False"
+        ],
+        "result": "Tidak Laris"
+    },
+    {
+        "conditions": [
+            "jenis_ikan_Tuna == True",
+            "jenis_ikan_Teri == True",
+            "terjual_harian > 49.00",
+            "terjual_harian > 53.00",
+            "bulan_April == True",
+            "terjual_harian <= 132.00",
+            "terjual_harian > 65.00",
+            "stok > 61.00",
+            "lokasi_Aceh Utara == True",
+            "kategori_pemasaran_Suplai ke FNB atau pelaku bisnis lain == False"
+        ],
+        "result": "Tidak Laris"
+    },
+    {
+        "conditions": [
+            "jenis_ikan_Tuna == True",
+            "jenis_ikan_Teri == True",
+            "terjual_harian > 49.00",
+            "terjual_harian > 53.00",
+            "bulan_April == True",
+            "terjual_harian <= 132.00",
+            "terjual_harian > 65.00",
+            "stok > 61.00",
+            "lokasi_Aceh Utara == False",
+            "stok <= 166.00"
+        ],
+        "result": "Laris"
+    },
+    {
+        "conditions": [
+            "jenis_ikan_Tuna == True",
+            "jenis_ikan_Teri == True",
+            "terjual_harian > 49.00",
+            "terjual_harian > 53.00",
+            "bulan_April == True",
+            "terjual_harian <= 132.00",
+            "terjual_harian > 65.00",
+            "stok > 61.00",
+            "lokasi_Aceh Utara == False",
+            "stok > 166.00",
+            "tahun <= 2021.00"
+        ],
+        "result": "Tidak Laris"
+    },
+    {
+        "conditions": [
+            "jenis_ikan_Tuna == True",
+            "jenis_ikan_Teri == True",
+            "terjual_harian > 49.00",
+            "terjual_harian > 53.00",
+            "bulan_April == True",
+            "terjual_harian <= 132.00",
+            "terjual_harian > 65.00",
+            "stok > 61.00",
+            "lokasi_Aceh Utara == False",
+            "stok > 166.00",
+            "tahun > 2021.00"
+        ],
+        "result": "Laris"
+    },
+    {
+        "conditions": [
+            "jenis_ikan_Tuna == True",
+            "jenis_ikan_Teri == True",
+            "terjual_harian > 49.00",
+            "terjual_harian > 53.00",
+            "bulan_April == True",
+            "terjual_harian > 132.00",
+            "stok <= 163.00"
+        ],
+        "result": "Laris"
+    },
+    {
+        "conditions": [
+            "jenis_ikan_Tuna == True",
+            "jenis_ikan_Teri == True",
+            "terjual_harian > 49.00",
+            "terjual_harian > 53.00",
+            "bulan_April == True",
+            "terjual_harian > 132.00",
+            "stok > 163.00"
+        ],
+        "result": "Tidak Laris"
+    },
+    {
+        "conditions": [
+            "jenis_ikan_Tuna == True",
+            "jenis_ikan_Teri == True",
+            "terjual_harian > 49.00",
+            "terjual_harian > 53.00",
+            "bulan_April == False"
+        ],
+        "result": "Laris"
+    },
+    {
+        "conditions": [
+            "jenis_ikan_Tuna == True",
+            "jenis_ikan_Teri == False",
+            "bulan_Maret == True"
+        ],
+        "result": "Tidak Laris"
+    },
+    {
+        "conditions": [
+            "jenis_ikan_Tuna == True",
+            "jenis_ikan_Teri == False",
+            "bulan_Maret == False"
+        ],
+        "result": "Laris"
+    },
+    {
+        "conditions": [
+            "jenis_ikan_Tuna == False",
+            "berat <= 0.60"
+        ],
+        "result": "Laris"
+    },
+    {
+        "conditions": [
+            "jenis_ikan_Tuna == False",
+            "berat > 0.60"
+        ],
+        "result": "Tidak Laris"
+    }
+]
