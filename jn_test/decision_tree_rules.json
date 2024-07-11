@@ -11,17 +11,17 @@
                 "feature": "stok",
                 "threshold": 183.0,
                 "left": {
-                    "class": "Tidak Laris"
+                    "class": "Laris"
                 },
                 "right": {
-                    "class": "Laris"
+                    "class": "Tidak Laris"
                 }
             },
             "right": {
                 "feature": "terjual_harian",
                 "threshold": 55.5,
                 "left": {
-                    "class": "Laris"
+                    "class": "Tidak Laris"
                 },
                 "right": {
                     "feature": "bulan_April",
@@ -33,13 +33,13 @@
                             "feature": "terjual_harian",
                             "threshold": 65.5,
                             "left": {
-                                "class": "Tidak Laris"
+                                "class": "Laris"
                             },
                             "right": {
                                 "feature": "stok",
                                 "threshold": 61.5,
                                 "left": {
-                                    "class": "Laris"
+                                    "class": "Tidak Laris"
                                 },
                                 "right": {
                                     "feature": "lokasi_Aceh Utara",
@@ -54,34 +54,34 @@
                                                 "feature": "bulan_Desember",
                                                 "threshold": 0.5,
                                                 "left": {
-                                                    "class": "Tidak Laris"
+                                                    "class": "Laris"
                                                 },
                                                 "right": {
-                                                    "class": "Laris"
+                                                    "class": "Tidak Laris"
                                                 }
                                             },
                                             "right": {
-                                                "class": "Laris"
+                                                "class": "Tidak Laris"
                                             }
                                         },
                                         "right": {
-                                            "class": "Laris"
+                                            "class": "Tidak Laris"
                                         }
                                     },
                                     "right": {
                                         "feature": "jenis_ikan_Udang",
                                         "threshold": 0.5,
                                         "left": {
-                                            "class": "Tidak Laris"
+                                            "class": "Laris"
                                         },
                                         "right": {
                                             "feature": "bulan_Juli",
                                             "threshold": 0.5,
                                             "left": {
-                                                "class": "Laris"
+                                                "class": "Tidak Laris"
                                             },
                                             "right": {
-                                                "class": "Tidak Laris"
+                                                "class": "Laris"
                                             }
                                         }
                                     }
@@ -92,15 +92,15 @@
                             "feature": "jenis_ikan_Tongkol",
                             "threshold": 0.5,
                             "left": {
-                                "class": "Tidak Laris"
+                                "class": "Laris"
                             },
                             "right": {
-                                "class": "Laris"
+                                "class": "Tidak Laris"
                             }
                         }
                     },
                     "right": {
-                        "class": "Tidak Laris"
+                        "class": "Laris"
                     }
                 }
             }
@@ -109,10 +109,10 @@
             "feature": "bulan_Maret",
             "threshold": 0.5,
             "left": {
-                "class": "Laris"
+                "class": "Tidak Laris"
             },
             "right": {
-                "class": "Tidak Laris"
+                "class": "Laris"
             }
         }
     },
@@ -120,10 +120,10 @@
         "feature": "terjual_harian",
         "threshold": 23.5,
         "left": {
-            "class": "Tidak Laris"
+            "class": "Laris"
         },
         "right": {
-            "class": "Laris"
+            "class": "Tidak Laris"
         }
     }
 }
