@@ -13,3 +13,10 @@ Senin - 01/juli/2024
 * tambahkan jurnal dosen it menggunakan c4.5 pada daftar Pustaka [SELESAI]
 * buat jurnal dalam 2 hari 
 
+
+kamis 1-08-2024
+
+Perbaiki format ,margin daftar isi  
+buat ket pada setiap table ,dan gambar 
+perbaiki urutan pada table data latih dan data uji 
+berdasarkan apa pelebelan status penjualan pada data latih 
