@@ -16,7 +16,13 @@ Senin - 01/juli/2024
 
 kamis 1-08-2024
 
-Perbaiki format ,margin daftar isi  
-buat ket pada setiap table ,dan gambar 
-perbaiki urutan pada table data latih dan data uji 
-berdasarkan apa pelebelan status penjualan pada data latih 
+1. Perbaiki semua format penulisan ,daftar isi ,daftar table,daftar gambar 
+2. buat ket pada setiap table ,dan gambar 
+3. perbaiki urutan pada table data latih dan data uji 
+4. berdasarkan apa pelebelan status penjualan pada data latih 
+5. setiap gambar diperjelas lagi 
+6. harus ada .....(1) pada setiap rumus yang dimasukan dalam perhitungan 
+7. pada hasil klasifikasi jumlah penjualan perbulan harus sesuai urutan  tahun dan bulan (jangan acak acakan )
+   dan di analisiskan satu persatu dari hasil klasifikasi .
+8. untuk implementasi dan python pada pohon keputusan dibuat di lampiran saja .
+
